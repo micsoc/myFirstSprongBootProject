@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ex3</title>
+</head>
+<h1>List</h1>
+<p>
+<ul th:each="book: ${bookList}">
+    <li th:text="|${book.author} - ${book.title} - ${book.price}|"/></li>
+</ul>
+<p>
+<h1>Table</h1>
+<table border="2">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Price</th>
+    </tr>
+    <tr th:each="book: ${bookList}">
+        <td th:text="${book.author}"/>
+        <td th:text="${book.title}"/>
+        <td th:text="${book.price}"/>
+    </tr>
+</table>
+<br>
+</p>
+<p>
+
+    <a href="/ex2">Add new book</a><br>
+
+    <a href="/ex3" th:action="${reset}">Reset book list</a>
+</p>
+
+</body>
+</html>

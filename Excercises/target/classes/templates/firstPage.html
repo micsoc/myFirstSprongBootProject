@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MainPage</title>
+</head>
+<body>
+<p title="firstPart">
+<h1>Is text.length()>5?</h1>
+<h2 th:if="${#strings.length(sampleText)>5}">Yes</h2>
+<h3 th:text="${sampleText}"/>
+</p>
+<p title="secondPart">
+<h1 th:text="|Is ${a} > ${b} ?|"/>
+<h2 th:text="${a}>${b}"/>
+</p>
+
+</body>
+</html>

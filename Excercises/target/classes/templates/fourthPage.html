@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex4</title>
+</head>
+<body>
+<form th:action="@{/ex4}" th:object="${post}" method="post">
+    <p><input type="text" th:field="*{title}" th:value="Title" placeholder="Post title"/></p>
+    <p><textarea rows="10" th:field="*{text}" placeholder="Insert content here"/></p>
+    <p><input type="text" th:field="*{tags}" placeholder="Tags"/></p>
+    <input type="submit" value="Add"/>
+</form>
+</body>
+</html>

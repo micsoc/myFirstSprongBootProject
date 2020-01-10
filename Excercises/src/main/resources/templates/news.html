@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body>
+
+<h1>Nowości ze świata nauki: (API)</h1>
+<ul>
+    <li th:each="news: ${news}">
+        <a th:href="${news.url}" target="_blank"><span th:text="${news.title}"> </span></a>
+    </li>
+</ul>
+
+</body>
+</html>
