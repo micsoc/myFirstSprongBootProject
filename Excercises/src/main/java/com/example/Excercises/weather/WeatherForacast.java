@@ -1,4 +1,4 @@
-package com.example.Excercises;
+package com.example.Excercises.weather;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -11,15 +11,18 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-public class NewsReader {
-    static List<News> news = new ArrayList<>();
 
-    public static List<News> readNews() {
-        String url = "https://newsapi.org/v2/top-headlines?country=pl&" +
-                "apiKey=73abe6bb38aa45079d123c419126fd5d&category=science";
+
+
+
+public class WeatherForacast {
+
+    public  static Weather readWeather() {
+    Weather weather = new Weather();
+        String icon = "";
+        String url = "http://api.openweathermap.org/data/2.5/weather?q=Warsaw,pl" +
+                "&APPID=4c1cb8c0ad8d4a75c5ca249179487061&lang=pl&units=metric";
 
         try {
             URL link = new URL(url);
@@ -29,17 +32,16 @@ public class NewsReader {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             JSONParser parser = new JSONParser();
             JSONObject jsonObject = (JSONObject) parser.parse(bufferedReader);
-            JSONArray articles = (JSONArray) jsonObject.get("articles");
+            JSONArray wetarr = (JSONArray) jsonObject.get("weather");
+            JSONObject currentWeather = (JSONObject) wetarr.get(0);
 
-            for (Object article : articles) {
+            weather.setDescription((String) currentWeather.get("description"));
+            icon = (String) currentWeather.get("icon");
 
-                JSONObject art = (JSONObject) article;
-                String title = (String) art.get("description");
-                String addres = (String) art.get("url");
-                if (title != null && !title.equals("") && addres != null ) {
-                news.add(new News(title, addres));
-                }
-            }
+            JSONObject numerals = (JSONObject) jsonObject.get("main");
+            weather.setTemperature((double)numerals.get("temp"));
+            weather.setHumidity((long) numerals.get("humidity"));
+            weather.setPressure((long) numerals.get("pressure"));
 
 
         } catch (MalformedURLException e) {
@@ -49,6 +51,8 @@ public class NewsReader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return news;
+        weather.setImageUrl("http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        return weather;
     }
+
 }
