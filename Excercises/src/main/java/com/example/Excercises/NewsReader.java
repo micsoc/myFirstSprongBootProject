@@ -1,5 +1,6 @@
 package com.example.Excercises;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -36,7 +37,7 @@ public class NewsReader {
                 JSONObject art = (JSONObject) article;
                 String title = (String) art.get("description");
                 String addres = (String) art.get("url");
-                if (title != null && !title.equals("") && addres != null ) {
+                if (title != null && addres != null) {
                 news.add(new News(title, addres));
                 }
             }

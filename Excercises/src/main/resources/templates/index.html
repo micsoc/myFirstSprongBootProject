@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to my Project</title>
-    <link rel="stylesheet" href="style.css">
 </head>
-<body background="../images/bckgrnd.jpg" style="background-size:cover">
-<table width="65%" height="90%" align="center" border="2">
+<body background="src/main/resources/images/bckgrnd.jpg">
+<table width="65%"  height = "90%" align="center" border = "2">
     <tr title="Upper Banner">
         <td colspan="3">
             <h1 align="center"> Welcome to my homework page</h1>
@@ -14,34 +13,29 @@
     </tr>
 
 
-    <tr height="200px">
-        <td title="LeftColumn" width="30%">
-            <ul align="top-center">
-                <li><a href="/ex1" target="main">Zadanie 1 </a></li>
-                <li><a href="/ex2" target="main">Zadanie 2 </a></li>
-                <li><a href="/ex3" target="main">Zadanie 3</a></li>
-                <li><a href="/ex4" target="main">Zadanie 4</a></li>
-                <li><a href="/exchanger" target="main">Kantor</a> </li>
-            </ul>
+    <tr height="400px">
+        <td title="LeftColumn">
+<ul align="top-center">
+    <li><a href="/ex1" target="main">Zadanie 1 </a></li>
+    <li><a href="/ex2" target="main">Zadanie 2 </a></li>
+    <li><a href="/ex3" target="main">Zadanie 3</a></li>
+    <li><a href="/ex4" target="main">Zadanie 4</a></li>
+</ul>
 
         </td>
-        <td rowspan="2">
-            <iframe width="100%" height="100%" name="main" src="/exchanger"></iframe>
-        </td>
-
-    </tr>
-    <tr>
         <td>
-            <iframe src="/weather" height="300"></iframe>
+            <iframe width = "100%" height ="100%" name="main" src="/ex1"></iframe>
         </td>
+
     </tr>
     <tr>
         <td title="footer" colspan="2">
             <iframe src="/news" height="600px" width=100%></iframe>
+
         </td>
     </tr>
 </table>
 </body>
 
 
-</html>
+
