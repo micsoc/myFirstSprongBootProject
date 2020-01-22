@@ -21,11 +21,7 @@ public class CurrencyExchanger {
     double ratio;
     double payment;
 
-    public static void main(String[] args) {
 
-        CurrencyExchanger exchanger = new CurrencyExchanger();
-        exchanger.exchange();
-    }
 
     public void exchange() {
 
