@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Ex2</title>
-    <link rel="stylesheet" href="sub.css">
 </head>
 <body>
 <h1>Add new book</h1>
 <form th:action="@{/ex2}" th:object="${newBook}" method="post">
 <input type="text" th:field="*{author}" placeholder="Author" />
 <input type="text" th:field="*{title}" placeholder="Title"/>
-<input type="number" step="0.01" th:field="*{price}" placeholder="Price" list="defaultNumbers"/>
+<input type="number" step="0,01" th:field="*{price}" placeholder="Price"/>
 <input type="submit" value="Add"/>
 </form>
 
-<datalist id="defaultNumbers">
-    <option value="69.99">
-    <option value="55.99">
-    <option value="19.99">
-    <option value="9.99">
-    <option value="4.50">
-</datalist>
 
 </body>
 
