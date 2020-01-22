@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>weather</title>
+    <link rel="stylesheet" href="sub.css">
+</head>
+<body>
+<p>Pogoda w Warszawie:</p>
+<img th:src="${weather.imageUrl}"/><br>
+<span th:text="${weather.description}"/>
+<p th:text="|temperatura: ${weather.temperature}&deg;C|"/>
+<p th:text="|ciśnienie: ${weather.pressure} hPa|"/>
+<p th:text="|wilgotność: ${weather.humidity} %|"/>
+</body>
+</html>
