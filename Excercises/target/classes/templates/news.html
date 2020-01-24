@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>News</title>
+    <link rel="stylesheet" href="sub.css">
 </head>
 <body>
 
 <h1>Nowości ze świata nauki: (API)</h1>
 <ul>
     <li th:each="news: ${news}">
-        <a th:href="${news.url}" target="_blank"><span th:text="${news.title}"> </span></a>
+        <a th:href="${news.url}" target="_blank"><span th:text="${news.title}"> </span></a></img>
     </li>
 </ul>
 
