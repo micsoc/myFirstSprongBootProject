@@ -1,3 +1,4 @@
-
-body{
-}
+a:link {color: #FF1493;}
+a:visited {color:#DC143C;}
+a:hover {color:#C71585;}
+a:active{color: #228B22;}
