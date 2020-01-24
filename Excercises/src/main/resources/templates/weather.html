@@ -7,7 +7,7 @@
 </head>
 <body>
 <p>Pogoda w Warszawie:</p>
-<img th:src="${weather.imageUrl}"/><br>
+<img th:src="${weather.imageUrl}" style="background-color:LightBlue"/><br>
 <span th:text="${weather.description}"/>
 <p th:text="|temperatura: ${weather.temperature}&deg;C|"/>
 <p th:text="|ciśnienie: ${weather.pressure} hPa|"/>
