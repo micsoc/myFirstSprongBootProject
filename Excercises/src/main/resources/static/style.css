@@ -1,12 +1,9 @@
 body {
 background-image : url("bckgrnd.jpg");
 background-attachment:fixed;
-color : #ffffff;
 font-family: Arial, Helvetica, sans-serif;
 }
-
-a:link{
-color :#fff;}
-
-a:visited{
-color: LightGrey;}
+a:link {color: #FF1493;}
+a:visited {color:#DC143C;}
+a:hover {color:#C71585;}
+a:active{color: #228B22;}
