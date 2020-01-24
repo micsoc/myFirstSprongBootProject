@@ -1,10 +1,17 @@
 package com.example.Excercises.currency;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,16 +19,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@Data
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Table(name = "exchanges")
 public class CurrencyExchanger {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
     Currency sell = new Currency();
 
     Currency buy = new Currency();
     double amount;
     double ratio;
     double payment;
-
-
 
     public void exchange() {
 
@@ -39,6 +50,7 @@ public class CurrencyExchanger {
 
         ratio = Math.round((sell.getCourse() / buy.getCourse()) * 1000) / 1000.0;
         payment = Math.round((amount * ratio) * 100) / 100.0;
+
 
     }
 
