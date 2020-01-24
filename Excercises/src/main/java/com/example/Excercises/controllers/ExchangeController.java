@@ -14,6 +14,8 @@ import java.util.Map;
 @RestController
 public class ExchangeController {
 
+
+
     @GetMapping("list")
     public List<CurrencyType> getList() {
         return Arrays.asList(CurrencyType.values());
@@ -23,11 +25,9 @@ public class ExchangeController {
     @PostMapping("exchange")
     public CurrencyExchanger exchangeCurrency(@RequestBody ExchangeRequest request) {
         CurrencyExchanger exchanger = new CurrencyExchanger();
-
         exchanger.setAmount(request.getAmount());
         exchanger.setBuyCurrency(request.getBuy());
         exchanger.setSellCurrency(request.getSell());
-
         exchanger.exchange();
         return exchanger;
     }
@@ -39,12 +39,10 @@ public class ExchangeController {
         for (CurrencyType currency : list) {
             if (!currency.equals(CurrencyType.PLN)) {
                 coursesMap.put(currency, exchanger.downloadCourse(currency));
-
             } else {
                 coursesMap.put(currency, 1.00);
             }
         }
         return coursesMap;
     }
-
 }

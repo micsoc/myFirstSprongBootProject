@@ -4,9 +4,7 @@ import com.example.Excercises.Book;
 import com.example.Excercises.News;
 import com.example.Excercises.NewsReader;
 import com.example.Excercises.Post;
-import com.example.Excercises.currency.Currency;
 import com.example.Excercises.currency.CurrencyExchanger;
-import com.example.Excercises.currency.CurrencyType;
 import com.example.Excercises.weather.WeatherForacast;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,10 +20,8 @@ public class FrontEndController {
     List<Book> books = new ArrayList<>();
 
     @GetMapping("/")
-    String index(ModelMap map) {
-
-        map.put("image", "static/bckgrnd.jpg");
-        return "index";
+    String index() {
+                return "index";
     }
 
     @GetMapping("/ex1")
@@ -100,5 +96,9 @@ String getWeather(ModelMap map) {
         return "postEx";
     }
 
+    @GetMapping("/apiInstructions")
+    String getApiInstructions(){
+        return "apiInstructions";
+    }
 }
 
