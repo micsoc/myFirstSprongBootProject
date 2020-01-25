@@ -23,7 +23,7 @@ text-decoration: none; color: Black;}
 a:hover {
 color: Black;
 background-image: linear-gradient(to left, rgba(45,95,144,0), rgba(45,95,144,1));
-border-radius:7px;}
+border-radius:4px;}
 
 a:active{
 text-decoration: none; color: Black;}
