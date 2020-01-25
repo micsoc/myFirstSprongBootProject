@@ -1,3 +1,48 @@
+input[type=text],input[type=number]{
+    height:1em;
+    background-color:#ffffff;
+    border: none;
+    border-bottom: 2px solid rgba(45,95,144,1);
+    -webkit-transition: height 1s ease-in-out;
+    transition: height 1s ease-in-out;
+}
 
-body{
+input[type=text]:focus,input[type=number]:focus {
+    background-color: lightblue;
+    height:2em;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color:rgba(45,95,144,1);
+    border: none;
+    color: white;
+}
+
+input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover{
+    transition:transform 2s;
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
+
+select{
+    background-color:rgba(45,95,144,1);
+    border: none;
+    color: white;
+}
+
+textarea{
+    border: none;
+border-bottom: 2px solid rgba(45,95,144,1);
+    resize: none;
+    height:2em;
+    -webkit-transition: height 1.2s ease-in-out;
+    transition: height 1.2s ease-in-out;
+}
+
+textarea:hover{
+    height:10em;
+}
+
+textarea:focus{
+    height:10em;
 }
