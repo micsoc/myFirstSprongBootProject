@@ -1,9 +1,29 @@
 body {
-background-image : url("bckgrnd.jpg");
-background-attachment:fixed;
 font-family: Arial, Helvetica, sans-serif;
 }
-a:link {color: #FF1493;}
-a:visited {color:#DC143C;}
-a:hover {color:#C71585;}
-a:active{color: #228B22;}
+table{
+border-style:none;
+background-color:rgba(255,255,255,0.7);}
+
+ul {
+list-style-type: none;}
+
+td,tr,th{
+border-style:none;}
+
+iframe{
+border-style:none;}
+
+a:link {
+text-decoration: none; color: Black;}
+
+a:visited {
+text-decoration: none; color: Black;}
+
+a:hover {
+color: Black;
+background-image: linear-gradient(to left, rgba(45,95,144,0), rgba(45,95,144,1));
+border-radius:7px;}
+
+a:active{
+text-decoration: none; color: Black;}
